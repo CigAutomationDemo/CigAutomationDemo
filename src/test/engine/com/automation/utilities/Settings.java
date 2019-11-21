@@ -26,7 +26,7 @@ public class Settings {
 	
 	
 	//JIRA Details
-	//777Please Update Jira Details Here
+	//777Pleas88e Update Jira Details Here
 	
 	//GoogleSheet Details
 	//https://docs.google.com/spreadsheets/d/1fJaoB5OP7KsCLuX-PakgsNM7WaGcO_Y52pf34lu6KPE/edit#gid=1504229818
