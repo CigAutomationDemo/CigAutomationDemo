@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="HOOQ" allow-return-values="true" verbose="2">
+	<test name="Grouping" preserve-order="true">
+		<parameter name="COUNTRY" value="IN" />
+		<parameter name="ENV" value="prod" />
+		<parameter name="ExType" value="Internal" />
+		<parameter name="Module" value="Android" />
+		<groups>
+			<run>
+				<exclude name="HOOQ_Android_MOBILE_Movie_Play" />				
+				<exclude name="HOOQ_Android_MOBILE_TVShows_Play" />	
+				<exclude name="HOOQ_Android_MOBILE_Verify_BTVOD" />	
+				<exclude name="HOOQ_Android_MOBILE_Verify_Trailer" />	
+				<exclude name="HOOQ_Android_MOBILE_ME_Premium" />	
+			</run>
+		</groups>
+		<classes>
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Sanity"/>		
+		</classes>
+	</test>
+</suite>

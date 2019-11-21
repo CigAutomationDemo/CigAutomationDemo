@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
+    <classes>
+      <class name="com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity">
+        <methods>
+          <include name="HOOQ_IOS_MOBILE_Verify_Download"/>
+          <include name="fnBeforeSuite"/>
+          <include name="HOOQ_IOS_MOBILE_Search_TVShows"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_Subscription"/>
+          <include name="HOOQ_IOS_MOBILE_Search_Movie"/>
+          <include name="HOOQ_IOS_MOBILE_TVShows_Play"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_LinkTV"/>
+          <include name="HOOQ_IOS_MOBILE_Similer_Titles"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_History"/>
+          <include name="HOOQ_IOS_MOBILE_Content_Details_Movie"/>
+          <include name="HOOQ_IOS_MOBILE_Movie_Play"/>
+          <include name="fnAfterSuite"/>
+          <include name="HOOQ_IOS_MOBILE_Content_Details_TVShows"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_TransactionHistory"/>
+          <include name="HOOQ_IOS_MOBILE_ME"/>
+          <include name="HOOQ_IOS_MOBILE_Movies_Section"/>
+          <include name="fnGroupIOS"/>
+          <include name="HOOQ_IOS_MOBILE_Login"/>
+          <include name="fnAfterTest"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_Trailer"/>
+          <include name="HOOQ_IOS_MOBILE_Discover"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_LogOut"/>
+          <include name="HOOQ_IOS_MOBILE_TVShows_Section"/>
+          <include name="HOOQ_IOS_MOBILE_ME_Premium"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_Support"/>
+          <include name="HOOQ_IOS_MOBILE_Download_TVShows"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_WatchLater"/>
+          <include name="HOOQ_IOS_MOBILE_Download_Movies"/>
+          <include name="HOOQ_IOS_MOBILE_Rent_Section"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_BTVOD"/>
+          <include name="HOOQ_IOS_MOBILE_Verify_Settings"/>
+          <include name="fnGroupSanity"/>
+        </methods>
+      </class> <!-- com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

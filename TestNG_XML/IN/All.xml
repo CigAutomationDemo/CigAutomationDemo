@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="HOOQ" allow-return-values="true" verbose="2">
+	<test name="Grouping" preserve-order="true">
+		<parameter name="COUNTRY" value="IN" />
+		<parameter name="ENV" value="prod" />
+		<groups>
+			<run>
+				<include name="IPhone" />
+				<include name="Sanity" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity2"/>		
+		</classes>
+	</test>
+</suite>

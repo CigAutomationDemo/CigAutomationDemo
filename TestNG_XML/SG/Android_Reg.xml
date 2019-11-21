@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="HOOQ" allow-return-values="true" verbose="2">
+	<test name="SG" preserve-order="true">
+		<parameter name="COUNTRY" value="SG" />
+		<parameter name="ENV" value="prod" />
+		<parameter name="ExType" value="Regression" />
+		<parameter name="Module" value="Android" />
+		<groups>
+			<run>
+				<exclude name="Visitor" />				
+				<exclude name="NEX" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Content_Details_Test"/>
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Like_Test"/>
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Link_TV_Test"/>		
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Login_Test"/>		
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_LogOut_Test"/>	
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_ME_Downloads_Test"/>
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_ME_History_Test"/>
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_ME_Test"/>	
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Movies_Test"/>
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Payments_Singapore"/>	
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Rent_Test"/>	
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Search_Test"/>	
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Season_And_Episode_Test"/>	
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Similar_Titles_Test"/>	
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Support_Test"/>		
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Trailer_Test"/>		
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Transaction_History_Test"/>		
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_TVShows_Test"/>		
+			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_WatchList_Test"/>
+		</classes>
+	</test>
+</suite>
