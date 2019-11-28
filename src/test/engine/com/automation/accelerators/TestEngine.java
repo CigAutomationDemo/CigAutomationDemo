@@ -28,6 +28,8 @@ import org.testng.annotations.Parameters;
 import com.automation.googledrive.ReportStatus;
 import com.automation.reports.Reporter;
 import com.automation.reports.ReportsExtent;
+import com.automation.slack.SlackTest;
+import com.automation.test.management.JiraAPI;
 import com.automation.test.management.TestRailTestRunStatus;
 import com.automation.utilities.FileUtilities;
 import com.automation.utilities.HOOQInput;
@@ -41,6 +43,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import net.rcarz.jiraclient.JiraException;
 
 public class TestEngine extends ReportsExtent{
 	public static RemoteWebDriver driver=null;
@@ -51,7 +54,10 @@ public class TestEngine extends ReportsExtent{
 	public static String strTestDataFilePath=FileUtilities.fnGetCurrentUserDir()+"/TestData/TestData.xlsx";
 	public static String strSheetName=null;
 	public static TestRailTestRunStatus testRailStatus=null;
+	public static String strDescription=null;
+	public static String strSummary=null;
 	public static boolean RestartApp=true;
+	public static SlackTest objSlackData=null; 
 	
 	@BeforeSuite(alwaysRun = true)
 	public void fnBeforeSuite() throws InterruptedException, IOException
@@ -106,6 +112,7 @@ public class TestEngine extends ReportsExtent{
 			String strProjectName=objConfig.strTestRailProject;
 			testRailStatus=new TestRailTestRunStatus(strProjectName, TestRailSuiteName,strTestRailFolder);
 		}
+		fnAssignDetails();
 	}
 	
 	@AfterMethod(alwaysRun = true)
@@ -128,6 +135,39 @@ public class TestEngine extends ReportsExtent{
 		{
 			TestRailTestRunStatus.fnReportStatus(objData.TestRailID);
 		}
+		if(Boolean.parseBoolean(objConfig.strSlackMessage))
+		{
+			//Update Slack Data
+			SlackTest.fnUpdateSanityChanel(objSlackData);
+		}
+	}
+	
+	public void fnAssignDetails()
+	{
+		strSummary=objData.strScriptName;
+		strDescription=objData.strScriptName + " not working";
+		strDescription=strDescription + "\n" + "Test Case Name : : " + objData.strScriptName;
+		strDescription=strDescription + "\n" + "Country : " + objData.COUNTRY;
+		strDescription=strDescription + "\n" + "Env : " + objData.ENV;
+		strDescription=strDescription + "\n" + "Test Rail Project : " + objConfig.strTestRailProject;
+	}
+	
+	public void fnAssignSlackData()
+	{
+		objSlackData=new SlackTest();
+		objSlackData.strScriptName=objData.strScriptName;
+		objSlackData.strBuildNo=objData.strBuildNo;
+		if(ReportStatus.blnStatus==false)
+        {
+			objSlackData.strStatus="FAIL";
+        }
+		else
+		{
+			objSlackData.strStatus="PASS";
+		}
+		objSlackData.strBuildDate=FileUtilities.GetCurrentTimeStamp();
+		objSlackData.strCountry=objData.COUNTRY;
+		objSlackData.strEnv=objData.ENV;
 	}
 	
 	public void fnSetExecutionType(String strType)
@@ -241,7 +281,7 @@ public class TestEngine extends ReportsExtent{
 						System.out.println("In Android block");
 						if(RestartApp)
 						{
-							//startAppiumServerWindows();
+							startAppiumServerWindows();
 							DesiredCapabilities capabilities = new DesiredCapabilities();
 					        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,objConfig.strOSName);
 					        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,objConfig.strOSVersion);
@@ -259,15 +299,15 @@ public class TestEngine extends ReportsExtent{
 					        driver=new AndroidDriver(new URL(objConfig.strAppiumURL), capabilities);
 					        Thread.sleep(10000);
 						}
-						/*if(Boolean.parseBoolean(objConfig.strRestartAppWithAppium)==false)
+						if(Boolean.parseBoolean(objConfig.strRestartAppWithAppium)==false)
 						{
 							RestartApp=false;
 						}
 						((AndroidDriver) driver).closeApp();
 						Thread.sleep(20000);
 						try{((AndroidDriver) driver).runAppInBackground(1);}catch (Exception e) {}
-						((AndroidDriver) driver).launchApp();*/
-					//	Thread.sleep(20000);
+						((AndroidDriver) driver).launchApp();
+						Thread.sleep(20000);
 				 }
 				}
 				else if(objConfig.strBaseOSName.toLowerCase().startsWith("mac"))
@@ -510,9 +550,11 @@ public class TestEngine extends ReportsExtent{
 	}
 	public void fnCloseTest()
     {
+		fnAssignSlackData();
         if(ReportStatus.blnStatus==false)
         {
-            Assert.fail();
+        	try{JiraAPI.fnAssignJIRADetails();} catch (JiraException e){}
+        	Assert.fail();
         }
     }
 	

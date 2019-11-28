@@ -5,15 +5,6 @@
 		<parameter name="ENV" value="prod" />
 		<parameter name="ExType" value="Sanity" />
 		<parameter name="Module" value="Android" />
-		<groups>
-			<run>
-				<exclude name="HOOQ_Android_MOBILE_Movie_Play" />				
-				<exclude name="HOOQ_Android_MOBILE_TVShows_Play" />	
-				<exclude name="HOOQ_Android_MOBILE_Verify_BTVOD" />	
-				<exclude name="HOOQ_Android_MOBILE_Verify_Trailer" />	
-				<exclude name="HOOQ_Android_MOBILE_ME_Premium" />	
-			</run>
-		</groups>
 		<classes>
 			<class name="com.automation.android.mobile.scripts.HOOQ_Android_Mobile_Sanity"/>		
 		</classes>

@@ -4,9 +4,10 @@ public class SlackTest {
 	public String strScriptName;
 	public String strStatus;
 	public String strBuildNo;
-	public String strCycle;
 	public String strBuildDate;
-	public String strBuildTime;
+	public String strCountry;
+	public String strEnv;
+	public String strDefectID;
 
 
 
@@ -14,7 +15,7 @@ public class SlackTest {
 		System.out.println("Test API");
 		// TODO Auto-generated method stub
 		// Send simple message
-		SlackApi api = new SlackApi("https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi("https://hooks.slack.com/services/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");
 		//api.call(new SlackMessage("Slack Automation Cigniti Demo123"));
 		String strMessage="Script Name :- HOOQ_Web_SignUp_Mobile ";
 		strMessage=strMessage + "\n" + "Status :- PASS ";
@@ -27,19 +28,20 @@ public class SlackTest {
 
 	public static void fnUpdateSanityChanel(SlackTest objData)
 	{
-		SlackApi api = new SlackApi("https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi("https://hooks.slack.com/services/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");
 		String strMessage="****************************************";
 		strMessage=strMessage + "\n"+"Script Name :- " + objData.strScriptName;
-		strMessage=strMessage + "\n" + "Status :- " + objData.strStatus;
+		strMessage=strMessage + "\n" +"Country :- " + objData.strCountry.toUpperCase();
+		strMessage=strMessage + "\n" +"Environment :- " + objData.strEnv.toUpperCase();
 		strMessage=strMessage + "\n" +"Build No :- " + objData.strBuildNo;
-		if(objData.strStatus.toLowerCase().equals("pass")==false)
+		strMessage=strMessage + "\n" +"Date & Time :- " + objData.strBuildDate;
+		strMessage=strMessage + "\n" +"Status :- " + objData.strStatus;
+		if(objData.strStatus.toLowerCase().contains("fail"))
 		{
-			strMessage=strMessage + "\n" +"Cycle No :- " + objData.strCycle;
-			strMessage=strMessage + "\n" +"Last Update Date :- " + objData.strBuildDate;
-			strMessage=strMessage + "\n" +"Last Update Time :- " + objData.strBuildTime;
+			strMessage=strMessage + "\n" +"Defect ID :- " + objData.strDefectID;
 		}
 		strMessage=strMessage + "\n" +"************************************";
-		api.call(new SlackMessage("#sanity_api_test", "automationcigniti",strMessage ));
+		api.call(new SlackMessage("#autodemo", "automationcigniti",strMessage ));
 	}
 
 }

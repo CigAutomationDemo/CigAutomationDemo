@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.automation.accelerators.TestEngine;
 import com.automation.reports.Reporter;
+import com.automation.utilities.Settings;
 import com.codepine.api.testrail.TestRail;
 import com.codepine.api.testrail.TestRail.CaseTypes;
 import com.codepine.api.testrail.TestRail.Projects;
@@ -14,9 +15,9 @@ import com.codepine.api.testrail.model.Suite;
 import com.codepine.api.testrail.model.Run;
 public class TestRailAPI {
 		public TestRail testRail;
-		private final static String endPoint = "https://hooqtv.testrail.net/";
-		private final static String username = "madan.peddagouni@cigniti.com";
-	    private final static String password = "Arjun@1234";
+		private final static String endPoint = Settings.TestRailURL;
+		private final static String username = Settings.TestRailUserID;
+	    private final static String password = Settings.TestRailPassword;
 		public TestRailAPI()
 		{
 			createTestRailInstance();

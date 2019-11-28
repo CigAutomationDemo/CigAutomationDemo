@@ -283,7 +283,7 @@ public class PlayerPage extends BasePage{
 			boolean blnStatus=true;
 			try
 			{
-				Thread.sleep(10000);
+				Thread.sleep(20000);
 				String strAfter="NA";
 				String strBefore="NA";
 				//Get the Initial Player time
@@ -543,7 +543,7 @@ public class PlayerPage extends BasePage{
 					{
 						clickPlayPause();
 					}
-					waitforPlay(10000);
+					waitforPlay(20000);
 					clickPlayPause();
 					strAfter=fnGetPlayerWindowText(timeCounter);
 					driver.navigate().back();

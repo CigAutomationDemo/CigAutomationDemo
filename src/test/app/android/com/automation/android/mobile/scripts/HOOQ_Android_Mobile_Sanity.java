@@ -76,32 +76,32 @@ public class HOOQ_Android_Mobile_Sanity extends BasePage {
 	 * Test Description :-Verify Movie Play
 	 * Test Rail ID		:-14092
 	 ***/
-	@Test(priority = 3,groups={TestConfig.Android,TestConfig.Sanity,"HOOQ_Android_MOBILE_Movie_Play"})
-	public void HOOQ_Android_MOBILE_Movie_Play() throws Throwable
+	@Test(priority = 3,groups={TestConfig.Android,TestConfig.Sanity,"HOOQ_Android_MOBILE_TVShows_Play"})
+	public void HOOQ_Android_MOBILE_TVShows_Play() throws Throwable
 	{
 		//Add Test Rail ID
 		HOOQInput.fnAddTestRailScriptID(Settings.Android_Test_3);
 		try 
 		{		
 			loginPage.fnVerifyReLoginStatus(objData.ACTIVE_USER_ID, objData.COUNTRY, objData.ENV);
-			Reporter.info("HOOQ Android Sanity","Verifying HOOQ_IOS_MOBILE_Movie_Play");
+			Reporter.info("HOOQ Android Sanity","Verifying HOOQ_Android_MOBILE_TVShows_Play");
 			meDownloadPage.fnClearDownloadEntry();
 			commonPage.fnSelectTab("Discover");
 			Thread.sleep(5000);
-			if(searchPage.clickAndSearch(objData.FREE_CONTENT))
+			if(searchPage.clickAndSearch(objData.TV_SERIES))
 			{
-				Reporter.pass("HOOQ Android Sanity", "Search of Movies " + objData.FREE_CONTENT + "is displayed");
+				Reporter.pass("HOOQ Android Sanity", "Search of TVShows " + objData.TV_SERIES + "is displayed");
 				contentDetailsPage.playVideo();
 				if(playerpage.fnVerifyPlayback(false,""))
 				{
-					Reporter.pass("HOOQ Android Sanity", "Playback Movies " + objData.FREE_CONTENT + "is Playing successfully");
+					Reporter.pass("HOOQ Android Sanity", "Playback TVShows " + objData.TV_SERIES + "is Playing successfully");
 				}
 				else
 				{
-					Reporter.fail("HOOQ Android Sanity", "Playback Movies " + objData.FREE_CONTENT + "is not Playing successfully");
+					Reporter.fail("HOOQ Android Sanity", "Playback TVShows " + objData.TV_SERIES + "is not Playing successfully");
 				}
 			} else{
-				Reporter.fail("HOOQ Android Sanity", "Search of Movies " + objData.FREE_CONTENT + "is not displayed");
+				Reporter.fail("HOOQ Android Sanity", "Search of TVShows " + objData.TV_SERIES + "is not displayed");
 			}
 		}
 		catch(Exception e){Reporter.fnPrintException(e);}
