@@ -279,6 +279,7 @@
 						<!-- <configfile>Android_Pankaj</configfile>-->
 						 <configfile>${xmlFile}</configfile> 
 					</systemPropertyVariables>
+					<forkMode>never</forkMode>
 				</configuration>
 			</plugin>			
 			<plugin>
