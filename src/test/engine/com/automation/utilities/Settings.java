@@ -26,10 +26,10 @@ public class Settings {
 	public static IssueDetails Android_Test__4_ISSUE=new IssueDetails();
 	
 	//IOS
-	public static int IOS_Test_1=1;
-	public static int IOS_Test_2=2;
-	public static int IOS_Test_3=3;
-	public static int IOS_Test_4=4;
+	public static int IOS_Test_1=5;
+	public static int IOS_Test_2=6;
+	public static int IOS_Test_3=7;
+	public static int IOS_Test_4=8;
 	
 	public static IssueDetails IOS_Test_1_ISSUE=new IssueDetails();
 	public static IssueDetails IOS_Test_2_ISSUE=new IssueDetails();

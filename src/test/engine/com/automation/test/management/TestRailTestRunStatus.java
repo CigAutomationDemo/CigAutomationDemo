@@ -24,38 +24,45 @@ public class TestRailTestRunStatus {
 		
 		public static void fnReportStatus(int scriptID) 
 		{
-		
-			String strStatus="untested";
-			if(ReportStatus.blnStatus)
+			try
 			{
-				strStatus="pass";
-			}
-			else
-			{
-				strStatus="fail";
-			}
-			int intStatus=0;
-			if(strStatus.toLowerCase().startsWith("pass"))
-			{
-				intStatus=1;
-			}
-			else if(strStatus.toLowerCase().startsWith("block"))
-			{
-				intStatus=2;
-			}
-			else if(strStatus.toLowerCase().startsWith("untes"))
-			{
-				intStatus=3;
-			}
-			else if(strStatus.toLowerCase().startsWith("retest"))
-			{
-				intStatus=4;
-			}
-			else if(strStatus.toLowerCase().startsWith("fail"))
-			{
-				intStatus=5;
-			}
-			TestEngine.testRailStatus.objDemo.addStatusForCase(intStatus, scriptID);	
+				String strStatus="untested";
+				if(ReportStatus.blnStatus)
+				{
+					strStatus="pass";
+				}
+				else
+				{
+					strStatus="fail";
+				}
+				int intStatus=0;
+				if(strStatus.toLowerCase().startsWith("pass"))
+				{
+					intStatus=1;
+				}
+				else if(strStatus.toLowerCase().startsWith("block"))
+				{
+					intStatus=2;
+				}
+				else if(strStatus.toLowerCase().startsWith("untes"))
+				{
+					intStatus=3;
+				}
+				else if(strStatus.toLowerCase().startsWith("retest"))
+				{
+					intStatus=4;
+				}
+				else if(strStatus.toLowerCase().startsWith("fail"))
+				{
+					intStatus=5;
+				}
+				TestEngine.testRailStatus.objDemo.addStatusForCase(intStatus, scriptID);
+				System.out.println("\n**********************************************");
+				System.out.println("Test Rail Details Updated  " );
+				System.out.println("Script ID :- " + scriptID);
+				System.out.println("Script Status :- " + strStatus);
+				System.out.println("\n**********************************************");
+			}catch(Exception e){}
 		}
 		
 		

@@ -114,6 +114,7 @@ public class LoginPage extends BasePage{
 					click(emailDone, "Done");
 				}
 			}
+			Thread.sleep(10000);
 			if(discoverPage.verifyDiscoverFeed()){
 				
 				Reporter.pass("Login", "Logged in successfully");

@@ -118,8 +118,11 @@ public class TestEngine extends ReportsExtent{
 	@AfterMethod(alwaysRun = true)
 	public void fnAfterTest()
 	{
-		System.out.println("After Method");
-		fnEndTest(extent, test);
+		fnAssignSlackData();
+        if(ReportStatus.blnStatus==false)
+        {
+        	try{JiraAPI.fnAssignJIRADetails();} catch (JiraException e){}
+        }
 		/*if(objConfig.strDriverType.toLowerCase().contains("desktop")||objConfig.strDriverType.toLowerCase().contains("chromemobileview"))
 		{
 			if(driver!=null)
@@ -140,6 +143,8 @@ public class TestEngine extends ReportsExtent{
 			//Update Slack Data
 			SlackTest.fnUpdateSanityChanel(objSlackData);
 		}
+		System.out.println("After Method");
+		fnEndTest(extent, test);
 	}
 	
 	public void fnAssignDetails()
@@ -289,7 +294,7 @@ public class TestEngine extends ReportsExtent{
 					        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,objConfig.strNewCommandTimeOut);
 					        if(Integer.parseInt(objConfig.strOSVersion)>6)
                             {
-                                capabilities.setCapability("automationName","UiAutomator2");
+                               // capabilities.setCapability("automationName","UiAutomator2");
                             }
                             capabilities.setCapability("appPackage",objConfig.strAppPackage);
                             capabilities.setCapability("appActivity",objConfig.strAppActivity);
@@ -550,12 +555,10 @@ public class TestEngine extends ReportsExtent{
 	}
 	public void fnCloseTest()
     {
-		fnAssignSlackData();
-        if(ReportStatus.blnStatus==false)
-        {
-        	try{JiraAPI.fnAssignJIRADetails();} catch (JiraException e){}
-        	Assert.fail();
-        }
+		if(ReportStatus.blnStatus==false)
+		{
+			Assert.fail();
+		}
     }
 	
 	public static void stopAppiumServer() {

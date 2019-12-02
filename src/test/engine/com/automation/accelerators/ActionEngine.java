@@ -2434,7 +2434,7 @@ public class ActionEngine extends TestEngine {
 			throws Throwable {
 		boolean flag = false;
 		try {
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 3; i++) {
 				List<WebElement> eleList=driver.findElements(loc);
 				if (eleList.size()>0) {
 					flag = true;

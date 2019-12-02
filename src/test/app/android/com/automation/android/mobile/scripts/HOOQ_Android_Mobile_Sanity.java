@@ -7,7 +7,7 @@ import com.automation.android.workflows.BasePage;
 import com.automation.reports.Reporter;
 import com.automation.utilities.HOOQInput;
 import com.automation.utilities.Settings;
-public class HOOQ_Android_Mobile_Sanity extends BasePage {
+public class HOOQ_Android_MOBILE_Sanity extends BasePage {
 	
 	/***
 	 * Test Script Name :-HOOQ_Android_MOBILE_ME
@@ -34,6 +34,7 @@ public class HOOQ_Android_Mobile_Sanity extends BasePage {
 		catch(Exception e){Reporter.fnPrintException(e);}
 		fnCloseTest();
 	}
+	
 	/***
 	 * Test Script Name :-HOOQ_Android_Mobile_Content_Details_Movie
 	 * Developed By 	:-Pankaj Kumar
@@ -68,9 +69,8 @@ public class HOOQ_Android_Mobile_Sanity extends BasePage {
 		fnCloseTest();
 	}
 	
-	
 	/***
-	 * Test Script Name :-HOOQ_Android_MOBILE_Movie_Play
+	 * Test Script Name :-HOOQ_Android_MOBILE_TVShows_Play
 	 * Developed By 	:-Pankaj Kumar
 	 * Date				:-20_may-2019
 	 * Test Description :-Verify Movie Play
@@ -85,9 +85,6 @@ public class HOOQ_Android_Mobile_Sanity extends BasePage {
 		{		
 			loginPage.fnVerifyReLoginStatus(objData.ACTIVE_USER_ID, objData.COUNTRY, objData.ENV);
 			Reporter.info("HOOQ Android Sanity","Verifying HOOQ_Android_MOBILE_TVShows_Play");
-			meDownloadPage.fnClearDownloadEntry();
-			commonPage.fnSelectTab("Discover");
-			Thread.sleep(5000);
 			if(searchPage.clickAndSearch(objData.TV_SERIES))
 			{
 				Reporter.pass("HOOQ Android Sanity", "Search of TVShows " + objData.TV_SERIES + "is displayed");
@@ -107,7 +104,7 @@ public class HOOQ_Android_Mobile_Sanity extends BasePage {
 		catch(Exception e){Reporter.fnPrintException(e);}
 		fnCloseTest();
 	}
-
+	
 	/***
 	 * Test Script Name :-HOOQ_Android_MOBILE_Verify_LogOut
 	 * Developed By 	:-Pankaj Kumar

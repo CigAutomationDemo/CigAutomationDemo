@@ -49,7 +49,7 @@ public class PlayPage extends BasePage{
 		{
 			boolean blnStatus=true;
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 				driver.findElement(playerWindow).click();
 				click(playerBack, "Back From Player page");
 			} catch (Exception e) {blnStatus=false;}
@@ -62,7 +62,7 @@ public class PlayPage extends BasePage{
 			boolean blnStatus=true;
 			try
 			{
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 				driver.findElement(playerWindow).click();
 				driver.findElement(btnPause).click();	
 			} catch (Exception e) {blnStatus=false;}
@@ -260,7 +260,7 @@ public class PlayPage extends BasePage{
 			String strText="";
 			try
 			{
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 				driver.findElement(playerWindow).click();
 				strText=getTextPlayerControl(timeCounter,"Video Playing Time");
 			} catch (Exception e) {}
@@ -679,10 +679,12 @@ public class PlayPage extends BasePage{
 					}
 				}
 				}
+				Thread.sleep(20000);
 				clickPlay();
 				waitforPlay(10000);
 				clickPause();
 				strAfter=verifyVideoTimeCounter();
+				Thread.sleep(10000);
 				if(navigateBack())
 				{
 					Reporter.pass("Playback Settings", "Player Window is Close");
