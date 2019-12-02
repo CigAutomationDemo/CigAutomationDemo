@@ -257,6 +257,8 @@
 	</dependency>
 		</dependencies>
 	<build>
+			<finalName>Cigniti_Automation</finalName>
+			<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
