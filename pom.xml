@@ -270,7 +270,7 @@
 					</dependency>
 				</dependencies>
 				<configuration>
-				  <useSystemClassLoader>true</useSystemClassLoader>
+				  <useSystemClassLoader>false</useSystemClassLoader>
 					<suiteXmlFiles>
 						<!-- <suiteXmlFile>${project.basedir}/testng_xmls/${suiteFile}</suiteXmlFile> -->
 						<suiteXmlFile>${project.basedir}/TestNG_XML/${country}/${suiteFile}.xml</suiteXmlFile>
@@ -288,6 +288,9 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<fork>true</fork>
+					<!--  <executable>${JAVA_HOME}/bin/javac</executable> -->
+					<compilerVersion>1.3</compilerVersion>
 				</configuration>
 			</plugin>
 		</plugins>
