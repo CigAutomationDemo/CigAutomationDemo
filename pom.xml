@@ -257,7 +257,7 @@
 	</dependency>
 		</dependencies>
 	<build>
-			<plugins>
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -270,26 +270,17 @@
 					</dependency>
 				</dependencies>
 				<configuration>
+				  <useSystemClassLoader>false</useSystemClassLoader>
 					<suiteXmlFiles>
 						<!-- <suiteXmlFile>${project.basedir}/testng_xmls/${suiteFile}</suiteXmlFile> -->
 						<suiteXmlFile>${project.basedir}/TestNG_XML/${country}/${suiteFile}.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						 <!-- <configfile>Android_Pankaj</configfile> -->
-						<configfile>${xmlFile}</configfile>
+						<!-- <configfile>Android_Pankaj</configfile>-->
+						 <configfile>${xmlFile}</configfile> 
 					</systemPropertyVariables>
-					<useSystemClassLoader>false</useSystemClassLoader>
 				</configuration>
-			</plugin>	
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>		
+			</plugin>			
 		</plugins>
 	</build>
 </project>
