@@ -278,6 +278,7 @@
 						 <!-- <configfile>Android_Pankaj</configfile> -->
 						<configfile>${xmlFile}</configfile>
 					</systemPropertyVariables>
+					<useSystemClassLoader>false</useSystemClassLoader>
 				</configuration>
 			</plugin>	
 			<plugin>
