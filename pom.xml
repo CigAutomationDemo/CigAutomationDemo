@@ -273,7 +273,8 @@
 				  <useSystemClassLoader>false</useSystemClassLoader>
 					<suiteXmlFiles>
 						<!-- <suiteXmlFile>${project.basedir}/testng_xmls/${suiteFile}</suiteXmlFile> -->
-						<suiteXmlFile>${project.basedir}/TestNG_XML/${country}/${suiteFile}.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>${project.basedir}/TestNG_XML/${country}/${suiteFile}.xml</suiteXmlFile> -->
+						<suiteXmlFile>${project.basedir}/TestNG_XML/IN/Android_Sanity.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
 						<!-- <configfile>Android_Pankaj</configfile>-->
