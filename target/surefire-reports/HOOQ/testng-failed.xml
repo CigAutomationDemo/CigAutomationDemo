@@ -4,43 +4,41 @@
   <parameter name="COUNTRY" value="IN"/>
   <parameter name="ENV" value="prod"/>
   <parameter name="ExType" value="Sanity"/>
-  <parameter name="Module" value="IPhone"/>
-  <test name="Grouping">
+  <parameter name="Module" value="Android"/>
+  <test name="HOOQ_Android">
     <parameter name="COUNTRY" value="IN"/>
     <parameter name="ENV" value="prod"/>
     <parameter name="ExType" value="Sanity"/>
-    <parameter name="Module" value="IPhone"/>
+    <parameter name="Module" value="Android"/>
     <groups>
       <run>
         <include name="Sanity"/>
       </run>
     </groups>
     <classes>
-      <class name="com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity"/>
+      <class name="com.automation.android.mobile.scripts.HOOQ_Android_MOBILE_Sanity"/>
     </classes>
-  </test> <!-- Grouping -->
-  <test name="Grouping(failed)">
+  </test> <!-- HOOQ_Android -->
+  <test name="HOOQ_Android(failed)">
     <parameter name="COUNTRY" value="IN"/>
     <parameter name="ENV" value="prod"/>
     <parameter name="ExType" value="Sanity"/>
-    <parameter name="Module" value="IPhone"/>
+    <parameter name="Module" value="Android"/>
     <groups>
       <run>
         <include name="Sanity"/>
       </run>
     </groups>
     <classes>
-      <class name="com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity">
+      <class name="com.automation.android.mobile.scripts.HOOQ_Android_MOBILE_Sanity">
         <methods>
           <include name="fnBeforeSuite"/>
+          <include name="HOOQ_Android_Mobile_Content_Details_Movie"/>
           <include name="fnBeforeTest"/>
-          <include name="HOOQ_IOS_MOBILE_Content_Details_Movie"/>
-          <include name="HOOQ_IOS_MOBILE_TVShows_Section"/>
           <include name="fnAfterSuite"/>
-          <include name="HOOQ_IOS_MOBILE_Movies_Section"/>
           <include name="fnAfterTest"/>
         </methods>
-      </class> <!-- com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity -->
+      </class> <!-- com.automation.android.mobile.scripts.HOOQ_Android_MOBILE_Sanity -->
     </classes>
-  </test> <!-- Grouping(failed) -->
+  </test> <!-- HOOQ_Android(failed) -->
 </suite> <!-- Failed suite [HOOQ] -->

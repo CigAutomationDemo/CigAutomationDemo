@@ -1,16 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 22, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 5,004.341 sec <<< FAILURE! - in TestSuite
-HOOQ_IOS_MOBILE_Movies_Section(com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity)  Time elapsed: 23.152 sec  <<< FAILURE!
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 849.222 sec <<< FAILURE! - in TestSuite
+HOOQ_Android_Mobile_Content_Details_Movie(com.automation.android.mobile.scripts.HOOQ_Android_MOBILE_Sanity)  Time elapsed: 44.486 sec  <<< FAILURE!
 java.lang.AssertionError: null
-	at com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity.HOOQ_IOS_MOBILE_Movies_Section(HOOQ_IOS_IPhone_Sanity.java:104)
-
-HOOQ_IOS_MOBILE_TVShows_Section(com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity)  Time elapsed: 23.154 sec  <<< FAILURE!
-java.lang.AssertionError: null
-	at com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity.HOOQ_IOS_MOBILE_TVShows_Section(HOOQ_IOS_IPhone_Sanity.java:130)
-
-HOOQ_IOS_MOBILE_Content_Details_Movie(com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity)  Time elapsed: 128.196 sec  <<< FAILURE!
-java.lang.AssertionError: null
-	at com.automation.ios.iphone.scripts.HOOQ_IOS_IPhone_Sanity.HOOQ_IOS_MOBILE_Content_Details_Movie(HOOQ_IOS_IPhone_Sanity.java:216)
+	at com.automation.android.mobile.scripts.HOOQ_Android_MOBILE_Sanity.HOOQ_Android_Mobile_Content_Details_Movie(HOOQ_Android_MOBILE_Sanity.java:69)
 

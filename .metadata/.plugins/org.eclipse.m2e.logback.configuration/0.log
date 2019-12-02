@@ -1,5 +1,0 @@
-2019-06-19 12:31:58,388 [Worker-16] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: HOOQ_Automation:HOOQ_QA:0.0.1-SNAPSHOT @ /Users/admin/Documents/GitHUB_HOOQ/HOOQ_QA_Cigniti/pom.xml.
-2019-06-19 12:32:06,121 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
-2019-06-19 12:32:06,122 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/admin/Documents/GitHUB_HOOQ/HOOQ_QA_Cigniti/src/main/resources
-2019-06-19 12:32:06,123 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
-2019-06-19 12:32:06,124 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/admin/Documents/GitHUB_HOOQ/HOOQ_QA_Cigniti/src/test/resources
