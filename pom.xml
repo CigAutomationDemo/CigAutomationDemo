@@ -13,7 +13,7 @@
 		<selenium.version>3.4</selenium.version>
 		<appium.version>3.4.1</appium.version>
 		<appium.support>1.0.5</appium.support>
-		<testng.version>6.9.10</testng.version>
+		<testng.version>6.10</testng.version>
 		<extent.version>2.41.2</extent.version>
 		<selenium.mobile.version>2.39.0</selenium.mobile.version>
 		<apache.poi.version>3.14</apache.poi.version>
