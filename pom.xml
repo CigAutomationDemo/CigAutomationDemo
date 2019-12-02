@@ -270,7 +270,7 @@
 					</dependency>
 				</dependencies>
 				<configuration>
-				  <useSystemClassLoader>false</useSystemClassLoader>
+				  <useSystemClassLoader>true</useSystemClassLoader>
 					<suiteXmlFiles>
 						<!-- <suiteXmlFile>${project.basedir}/testng_xmls/${suiteFile}</suiteXmlFile> -->
 						<suiteXmlFile>${project.basedir}/TestNG_XML/${country}/${suiteFile}.xml</suiteXmlFile>
